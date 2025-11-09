@@ -1,0 +1,86 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/matches', label: 'Matches' },
+  { href: '/tactics', label: 'Tactics' },
+  { href: '/news', label: 'News' },
+  { href: '/analysis', label: 'Analysis' },
+  { href: '/blog', label: 'Blog' }
+];
+---
+
+<nav class="bg-gray-900 border-b border-gray-800">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold tracking-wider" style="color: #39FF14; text-shadow: 0 0 8px rgba(57, 255, 20, 0.5);">
+        Tactical Tachyon
+      </a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-gray-300 hover:text-[#39FF14] transition-colors duration-200 relative group"
+            style="text-shadow: 0 0 4px rgba(57, 255, 20, 0.3);"
+          >
+            {item.label}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#39FF14] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-[#39FF14]">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 flex flex-col gap-3">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="text-gray-300 hover:text-[#39FF14] py-2 px-4 rounded transition-colors duration-200"
+          style="text-shadow: 0 0 4px rgba(57, 255, 20, 0.3);"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<!-- Client-side JavaScript for mobile toggle -->
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+  
+  body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    background-image: 
+      linear-gradient(rgba(75, 0, 130, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(75, 0, 130, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  nav {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+  }
+  
+  a:hover {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
+  }
+</style>

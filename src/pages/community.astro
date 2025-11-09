@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Join the GoalGetter Galaxy Community";
+const pageDescription = "Connect with fellow football enthusiasts in the GoalGetter Galaxy community. Share epic goals, discuss latest news, and fuel your passion for the beautiful game together.";
+const communityFeatures = [
+  {
+    icon: "fas fa-video",
+    title: "Share Epic Goals",
+    description: "Post your favorite highlights, fan reactions, and personal stories from matches that left you speechless."
+  },
+  {
+    icon: "fas fa-newspaper",
+    title: "Stay Updated on News",
+    description: "Discuss breaking transfers, match analyses, and insider scoops with like-minded fans."
+  },
+  {
+    icon: "fas fa-globe-americas",
+    title: "Connect Globally",
+    description: "From Premier League die-hards to World Cup warriors, find your tribe no matter where you are."
+  },
+  {
+    icon: "fas fa-trophy",
+    title: "Participate in Challenges",
+    description: "Engage in fun polls, prediction leagues, and community events to test your football knowledge."
+  }
+];
+
+const testimonials = [
+  {
+    name: "Alex Morgan",
+    role: "Premier League Fan",
+    content: "Since joining, I've discovered so many incredible goals I never would have seen otherwise!"
+  },
+  {
+    name: "Maria Rodriguez",
+    role: "World Cup Champion",
+    content: "The community discussion around matches is unmatched. Truly passionate fans!"
+  },
+  {
+    name: "James Wilson",
+    role: "Football Analyst",
+    content: "This is where real football conversations happen, not just stats and headlines."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-primary to-accent py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]" />
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          Join the <span class="text-yellow-300">GoalGetter Galaxy</span> Community
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-10">
+          Ignite Your Passion for Football with Epic Goals and News
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+            <i class="fas fa-rocket mr-2"></i> Join Now
+          </button>
+          <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-white/10 transition-all">
+            <i class="fas fa-users mr-2"></i> Browse Members
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Cards Section -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          Why Join Our Community?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Connect with fellow football enthusiasts and elevate your passion for the beautiful game
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {communityFeatures.map((feature, index) => (
+          <div 
+            key={index}
+            class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+          >
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-primary`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          What Our Members Say
+        </h2>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto">
+          Join thousands of passionate football fans from around the globe
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index}
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+          >
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                <i class="fas fa-user text-white text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold">{testimonial.name}</h4>
+                <p class="text-white/80 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-white/90 italic">"{testimonial.content}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary to-accent rounded-3xl p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Ignite Your Football Passion?
+        </h2>
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+          Join thousands of football enthusiasts who share your love for the beautiful game
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+            <i class="fas fa-sign-in-alt mr-2"></i> Create Free Account
+          </button>
+          <button class="bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-white/10 transition-all">
+            <i class="fas fa-comment-dots mr-2"></i> Join Discussion
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-accent mb-2">120K+</div>
+          <div class="text-gray-400">Active Members</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-accent mb-2">50K+</div>
+          <div class="text-gray-400">Weekly Goals</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-accent mb-2">24/7</div>
+          <div class="text-gray-400">Community Support</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-accent mb-2">150+</div>
+          <div class="text-gray-400">Countries</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .glow {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>

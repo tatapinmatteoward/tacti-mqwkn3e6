@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-twitter', url: '#' },
+  { icon: 'fab fa-github', url: '#' },
+  { icon: 'fab fa-discord', url: '#' },
+  { icon: 'fab fa-linkedin', url: '#' }
+];
+---
+
+<footer class="bg-black text-white py-8 relative overflow-hidden">
+  {/* Tactical Grid Pattern */}
+  <div class="absolute inset-0 opacity-10">
+    <div class="w-full h-full" style="background: linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold text-[#39FF14] tracking-wider">TACTICAL TACHYON</h2>
+      <p class="mt-2 text-gray-400">Advanced Cyber Solutions</p>
+    </div>
+    
+    <div class="flex justify-center gap-6 mb-6">
+      {socialLinks.map((link) => (
+        <a 
+          href={link.url} 
+          class="text-gray-300 hover:text-[#39FF14] transition-colors duration-300"
+          aria-label={link.icon.replace('fab fa-', '')}
+        >
+          <i class={link.icon}></i>
+        </a>
+      ))}
+    </div>
+    
+    <div class="border-t border-gray-800 pt-6">
+      <p class="text-center text-gray-500 text-sm">
+        &copy; {currentYear} Tactical Tachyon. All rights reserved.
+      </p>
+      <p class="text-center text-gray-600 text-xs mt-2">
+        <span class="text-[#4B0082]">NEON GRID</span> | <span class="text-[#39FF14]">SECURE SYSTEMS</span>
+      </p>
+    </div>
+  </div>
+  
+  {/* Neon Glow Effects */}
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-[#39FF14] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-24 h-24 bg-[#4B0082] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+  </div>
+</footer>

@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Epic Goals - Ignite Your Football Passion";
+const pageDescription = "Dive into the heart-pounding world of football goals on GoalGetter Galaxy. Relive iconic strikes, celebrate the latest scorers, and fuel your love for the beautiful game with dynamic highlights and expert insights.";
+
+const latestGoals = [
+  {
+    id: 1,
+    title: "Premier League Thriller",
+    description: "Erling Haaland's blistering volley against Manchester City rivals – pure power!",
+    category: "Premier League",
+    time: "2023-05-15",
+    thumbnail: "haaland-volley"
+  },
+  {
+    id: 2,
+    title: "La Liga Flair",
+    description: "Lionel Messi's (hypothetical return) no-look assist leading to a stunning goal.",
+    category: "La Liga",
+    time: "2023-04-22",
+    thumbnail: "messi-assist"
+  },
+  {
+    id: 3,
+    title: "Serie A Drama",
+    description: "A last-minute header that sealed Championship victory in dramatic fashion.",
+    category: "Serie A",
+    time: "2023-03-10",
+    thumbnail: "last-minute-header"
+  },
+  {
+    id: 4,
+    title: "Bundesliga Brilliance",
+    description: "A spectacular bicycle kick that left the stadium in awe.",
+    category: "Bundesliga",
+    time: "2023-02-18",
+    thumbnail: "bicycle-kick"
+  }
+];
+
+const featuredGoals = [
+  {
+    id: 1,
+    title: "The Impossible Goal",
+    description: "A perfect strike from 35 yards that defied physics and broke hearts",
+    category: "World Cup",
+    views: "2.4M",
+    thumbnail: "impossible-goal"
+  },
+  {
+    id: 2,
+    title: "The Comeback Goal",
+    description: "The stunning equalizer that sparked a championship win",
+    category: "Champions League",
+    views: "1.8M",
+    thumbnail: "comeback-goal"
+  },
+  {
+    id: 3,
+    title: "The Header Hero",
+    description: "A perfectly timed header that changed the course of the season",
+    category: "Premier League",
+    views: "3.1M",
+    thumbnail: "header-hero"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-primary to-accent py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+          Epic Goals: Where Magic Happens on the Pitch
+        </h1>
+        <p class="mt-6 text-xl text-white/90 max-w-2xl">
+          Dive into the heart-pounding world of football goals on GoalGetter Galaxy. 
+          Relive iconic strikes, celebrate the latest scorers, and fuel your love for 
+          the beautiful game with dynamic highlights and expert insights.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <button class="bg-white text-primary font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+            Watch Latest Goals
+          </button>
+          <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition-all">
+            Explore Categories
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Goals Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          Latest Goals That Stole the Show
+        </h2>
+        <a href="#" class="text-primary font-bold flex items-center">
+          View More <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {latestGoals.map((goal) => (
+          <div key={goal.id} class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-r from-primary to-accent">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="fas fa-futbol text-white text-5xl opacity-70"></i>
+              </div>
+              <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                {goal.category}
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{goal.title}</h3>
+              <p class="text-gray-600 mb-4">{goal.description}</p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>{goal.time}</span>
+                <span class="flex items-center">
+                  <i class="fas fa-eye mr-1"></i> 1.2M views
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Goals Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+        Featured Goals That Define Football History
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {featuredGoals.map((goal, index) => (
+          <div key={goal.id} class={`relative rounded-2xl overflow-hidden shadow-xl ${index === 1 ? 'lg:col-span-2' : ''}`}>
+            <div class="h-80 bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-white text-6xl mb-4">
+                  {index === 0 ? '1' : index === 1 ? '2' : '3'}
+                </div>
+                <h3 class="text-2xl font-bold text-white">{goal.title}</h3>
+                <p class="text-white/90 mt-2 max-w-md mx-auto">{goal.description}</p>
+                <div class="mt-6 flex justify-center">
+                  <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-bold">
+                    {goal.category}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <div class="flex justify-between items-center">
+                <span class="text-white font-bold">{goal.views} views</span>
+                <button class="bg-white text-primary px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition">
+                  Watch Now
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Goal Categories Section -->
+  <section class="py-16 bg-gradient-to-br from-gray-900 to-primary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">
+        Explore by Category
+      </h2>
+      <p class="text-gray-300 text-center max-w-2xl mx-auto mb-16">
+        Discover the most spectacular goals from all major football leagues and tournaments
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {['Premier League', 'La Liga', 'Serie A', 'Bundesliga', 'Champions League', 'World Cup', 'Copa America', 'FA Cup'].map((category, index) => (
+          <div key={index} class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition cursor-pointer">
+            <div class="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-trophy text-white text-xl"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg">{category}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">10M+</div>
+          <div class="text-gray-600">Goals Watched</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">500K+</div>
+          <div class="text-gray-600">Unique Viewers</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+          <div class="text-gray-600">Leagues Covered</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">99%</div>
+          <div class="text-gray-600">Fan Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .animate-pulse-scale {
+    animation: pulse 2s infinite;
+  }
+</style>

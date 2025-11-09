@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Videos - Epic Football Highlights and Goals on GoalGetter Galaxy";
+const pageDescription = "Dive into the excitement of football with our curated collection of videos featuring stunning goals, match highlights, player interviews, and exclusive news. Ignite your passion for the beautiful game right here on GoalGetter Galaxy!";
+
+const featuredVideos = [
+  {
+    id: 1,
+    title: "Messi's Magical Solo Run",
+    description: "A masterpiece of skill and speed that left defenders in the dust.",
+    duration: "3:45",
+    category: "Goals"
+  },
+  {
+    id: 2,
+    title: "Ronaldo's Rocket Header",
+    description: "Power and precision in one unforgettable strike.",
+    duration: "2:30",
+    category: "Goals"
+  },
+  {
+    id: 3,
+    title: "Iconic Free-Kicks",
+    description: "Bend it like Beckham with compilations of the world's best curlers.",
+    duration: "4:15",
+    category: "Compilation"
+  },
+  {
+    id: 4,
+    title: "Champions League Highlights",
+    description: "The most dramatic moments from the biggest stage.",
+    duration: "5:20",
+    category: "Highlights"
+  },
+  {
+    id: 5,
+    title: "Player Interviews",
+    description: "Behind the scenes with football's biggest stars.",
+    duration: "6:10",
+    category: "Interviews"
+  },
+  {
+    id: 6,
+    title: "Training Session Reels",
+    description: "Watch legends prepare for battle.",
+    duration: "3:50",
+    category: "Training"
+  }
+];
+
+const videoCategories = [
+  { name: "All Videos", count: 124 },
+  { name: "Goals", count: 42 },
+  { name: "Highlights", count: 38 },
+  { name: "Interviews", count: 15 },
+  { name: "Training", count: 29 }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-primary to-accent py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-block px-4 py-1 bg-white/20 rounded-full mb-6">
+          <span class="text-white font-bold text-sm tracking-wider">EXCLUSIVE CONTENT</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Relive the Thrill: Football Videos That Pack a Punch
+        </h1>
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+          Dive into the excitement of football with our curated collection of videos featuring stunning goals, match highlights, player interviews, and exclusive news.
+        </p>
+        <div class="flex justify-center gap-4">
+          <button class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Watch Now
+          </button>
+          <button class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition-all duration-300">
+            Browse Collection
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">124+</div>
+          <div class="text-gray-600">Videos Available</div>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">10K+</div>
+          <div class="text-gray-600">Monthly Views</div>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">500+</div>
+          <div class="text-gray-600">Player Interviews</div>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+          <div class="text-gray-600">Football Coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Categories -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Our Video Collection</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Browse through our diverse array of football content, from spectacular goals to exclusive player interviews
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        {videoCategories.map((category, index) => (
+          <button 
+            key={index}
+            class="px-6 py-3 bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all duration-300 font-medium"
+          >
+            {category.name} <span class="ml-2 bg-gray-200 hover:bg-white rounded-full px-2 py-0.5 text-xs">{category.count}</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Featured Videos Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredVideos.map((video) => (
+          <div 
+            key={video.id}
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+          >
+            <div class="relative h-48 bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+              <div class="absolute inset-0 bg-black/20"></div>
+              <i class="fas fa-play-circle text-white text-5xl opacity-80"></i>
+              <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                {video.duration}
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-3">
+                {video.category}
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{video.title}</h3>
+              <p class="text-gray-600 mb-4">{video.description}</p>
+              <button class="flex items-center text-primary font-medium hover:text-accent transition-colors">
+                <span>Watch Video</span>
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Ignite Your Football Passion?</h2>
+      <p class="text-white/90 max-w-2xl mx-auto mb-10 text-lg">
+        Join millions of football fans who never miss a moment of the beautiful game with our exclusive video content.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Get Exclusive Access
+        </button>
+        <button class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition-all duration-300">
+          View All Videos
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>

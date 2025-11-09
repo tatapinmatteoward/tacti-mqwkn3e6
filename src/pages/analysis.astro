@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Tactical Analysis Hub";
+const pageDescription = "Dive into the quantum depths of football tactics with Tactical Tachyon's advanced analysis tools. Uncover patterns, predict outcomes, and elevate your game understanding through our sci-fi inspired insights.";
+
+const analysisFeatures = [
+  {
+    title: "Tactical Formations",
+    description: "Breakdowns of 4-3-3 vs. 3-5-2 evolutions, with heat maps glowing like pulsar emissions.",
+    icon: "fa-chart-line"
+  },
+  {
+    title: "Player Performance Metrics",
+    description: "Advanced stats on possession under pressure and defensive phasing, benchmarked against league phantoms.",
+    icon: "fa-user-chart"
+  },
+  {
+    title: "Match Simulations",
+    description: "Predictive models for game outcomes with confidence percentages and tactical scenarios.",
+    icon: "fa-robot"
+  },
+  {
+    title: "Heat Map Analysis",
+    description: "Visual representations of player movement and positioning patterns across multiple matches.",
+    icon: "fa-map-marked-alt"
+  }
+];
+
+const dataPoints = [
+  { label: "Formation Efficiency", value: "87%", color: "bg-green-500" },
+  { label: "Passing Accuracy", value: "84%", color: "bg-blue-500" },
+  { label: "Defensive Success", value: "78%", color: "bg-purple-500" },
+  { label: "Possession Control", value: "73%", color: "bg-yellow-500" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative min-h-screen bg-gray-900 text-white overflow-hidden">
+    {/* Background grid pattern */}
+    <div class="absolute inset-0 opacity-10">
+      <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
+        {Array.from({ length: 144 }).map((_, i) => (
+          <div key={i} class="border border-gray-700"></div>
+        ))}
+      </div>
+    </div>
+
+    {/* Animated neon grid lines */}
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent animate-pulse"></div>
+      <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-pulse"></div>
+      <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-green-500 to-transparent animate-pulse"></div>
+      <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-purple-500 to-transparent animate-pulse"></div>
+    </div>
+
+    {/* Hero Section */}
+    <section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-purple-500">
+            Tactical Analysis Hub
+          </h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-300">
+            Unleashing Tactical Insights in Football
+          </p>
+          
+          <div class="relative inline-block">
+            <div class="absolute inset-0 bg-green-500 rounded-lg blur opacity-25 animate-pulse"></div>
+            <div class="relative px-8 py-4 bg-gray-900 border border-green-500 rounded-lg">
+              <p class="text-lg md:text-xl">
+                Dive into the quantum depths of football tactics with Tactical Tachyon's advanced analysis tools
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Introduction Section */}
+    <section class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 md:p-8">
+              <h2 class="text-3xl font-bold mb-6 text-green-400">Welcome to the Tachyon Core</h2>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Where football's chaos meets calculated precision. In this minimalist dark sci-fi realm, 
+                neon grids illuminate the hidden strategies that define the beautiful game.
+              </p>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Our analysis page isn't just data—it's a portal to foresight, powered by cutting-edge 
+                algorithms mimicking neural tachyon streams.
+              </p>
+              <div class="mt-8">
+                <h3 class="text-xl font-semibold text-purple-400 mb-4">Why Analyze with Tactical Tachyon?</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-star text-green-400 mt-1 mr-3"></i>
+                    <span>Advanced predictive modeling for future matches</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-star text-green-400 mt-1 mr-3"></i>
+                    <span>Real-time tactical insights during live games</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-star text-green-400 mt-1 mr-3"></i>
+                    <span>Deep integration with player performance databases</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-star text-green-400 mt-1 mr-3"></i>
+                    <span>Customizable visualization dashboards</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-gradient-to-r from-green-500 to-purple-500 rounded-2xl blur opacity-25 animate-pulse"></div>
+              <div class="relative bg-gray-800 border border-gray-700 rounded-2xl p-6 md:p-8">
+                <div class="flex justify-center mb-6">
+                  <div class="w-32 h-32 rounded-full bg-gradient-to-br from-green-500 to-purple-500 flex items-center justify-center">
+                    <i class="fas fa-brain text-5xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4 text-green-400">Quantum Tactical Insights</h3>
+                <p class="text-gray-300 text-center">
+                  Our proprietary algorithms process terabytes of data to reveal patterns invisible to the naked eye.
+                  The future of football analysis is here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Features Section */}
+    <section class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-400">Advanced Analysis Tools</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {analysisFeatures.map((feature, index) => (
+            <div 
+              key={index} 
+              class="bg-gray-800 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-green-500 transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-purple-500 flex items-center justify-center mb-4">
+                <i class={`fas ${feature.icon} text-white text-xl`}></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+              <p class="text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Data Visualization */}
+    <section class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Performance Metrics Dashboard</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dataPoints.map((point, index) => (
+              <div key={index} class="relative">
+                <div class="h-4 bg-gray-700 rounded-full overflow-hidden">
+                  <div 
+                    class={`${point.color} h-full rounded-full`} 
+                    style={{ width: point.value }}
+                  ></div>
+                </div>
+                <div class="mt-3 flex justify-between">
+                  <span class="text-gray-300">{point.label}</span>
+                  <span class="text-green-400 font-bold">{point.value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-purple-400">Formation Comparison</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center p-3 bg-gray-900 rounded-lg">
+                  <span>4-3-3 Formation</span>
+                  <span class="text-green-400">87%</span>
+                </div>
+                <div class="flex justify-between items-center p-3 bg-gray-900 rounded-lg">
+                  <span>3-5-2 Formation</span>
+                  <span class="text-green-400">82%</span>
+                </div>
+                <div class="flex justify-between items-center p-3 bg-gray-900 rounded-lg">
+                  <span>4-2-3-1 Formation</span>
+                  <span class="text-green-400">78%</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-purple-400">Player Heat Maps</h3>
+              <div class="relative h-64 bg-gray-900 rounded-lg overflow-hidden border border-gray-700">
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="relative w-48 h-48">
+                    {/* Simplified heat map visualization */}
+                    <div class="absolute top-1/4 left-1/4 w-12 h-12 bg-green-500 rounded-full opacity-80 animate-pulse"></div>
+                    <div class="absolute top-1/3 left-1/2 w-16 h-16 bg-purple-500 rounded-full opacity-70 animate-pulse"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-14 h-14 bg-yellow-500 rounded-full opacity-60 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Call to Action */}
+    <section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-gradient-to-r from-green-900 to-purple-900 border border-green-500 rounded-2xl p-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Transform Your Tactical Approach
+          </h2>
+          <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+            Join thousands of coaches and analysts who have already elevated their game understanding with Tactical Tachyon.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button class="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg font-bold hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105">
+              Start Free Trial
+            </button>
+            <button class="px-8 py-4 bg-transparent border-2 border-purple-500 rounded-lg font-bold hover:bg-purple-500 transition-all">
+              Schedule Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
